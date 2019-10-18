@@ -1,0 +1,38 @@
+Imagine a game where ailiens invade a castle. The castle location is known on a map. 
+These aliens travel on a specific path to reach the castle and destroy it.
+In defence the castle can set up "snipers" besides the path such that they shoot the ailiens
+before they arrive at the castle. 
+If  snipers fails to shoot down an ailien it could succeed in reaching the castle and destroying it.
+create the game to model this scenario
+
+1. The classes have been identified as: (with some attributes)
+    Object ----------------------------------------------> Attributes  
+    Invader (an ailien), 
+    Map -------------------------------------------------->Width, height                                         
+    Point (a location on the map for the snipper), -------> X, Y
+    Path (on which the ailiens travel)
+    Tower (the castle they aim to destroy)
+
+Game.cs holds the main() method 
+2. Each object is given a constructor. A constructor does not return a value
+    convention is to name the constructor same as the class name
+
+3. Define what an object can do (behaviour) using methods eg the isOnMap method checks if a point is 
+    on the map
+    navigate to the right path and run:
+    Marys-MacBook-Air:exercise2 methods gertrude$ mcs -out:GertrudeDefence.exe *.cs && mono GertrudeDefence.exe
+    you should see that point 4,2 is on the map but 8,5 is not
+
+4. Static methods are called directly on the class. We dont need to construct an object before we can use them eg 
+    Math.Sqrt() -- Math is the name of the Math class, there is no math object being used. The Sqrt method is called directly on the math class 
+    Console.WriteLine() -- We call the method WriteLine() directly on the Console class without constructing a console object
+    The Main() method is static. This allows us to call it without first creating an instance of class Game
+
+5. Instance methods: Contrary in say Game.cs, 
+    to use the not static method onMap() we first had to construct the map object and then call onMap()
+    the DistanceTo method of the Point class is also an instance method, because they are called on objects
+    
+6. Overloading methods: A class can have multiple methods with the same name. This is useful because not all the data 
+    that the said method can handle comes in the same type.
+    To overload is to have two methods that have the same name but take different parameters
+    When overloading methods the return types HAVE TO MATCH
